@@ -1,0 +1,12 @@
+Log - 5:
+    - creating a microservice quiz, with methods createQuiz, getQuiz, getScore in controller.
+    - how quiz-service interacts with question-service is through RestTemplate.
+        - services required for connection between two microservices are 1) Feign service 2) Eureka Server
+        - Feign service is declarative way of connecting microservices, no need to hardcode the connection.
+        - quiz-service must find question-service and connect, so question-service must be available, "Service Registry" (Eureka server) is a server with which microservices communicate.
+        - With the help of Eureka Client from Eureka server, each microservice has their own client, and each of them register themselves at the Service Registry.
+
+Log - 6:
+    - creating an interface that is connected to the question-service by using method bodies from question-service
+    - creating an object of that interface and accessing methods getquestions, getscore, create quiz
+    - you can see in the eureka client that 2 services will be running and a quiz is created in db and accessed.

@@ -1,0 +1,25 @@
+Log - 1:
+    - Imported packages from monolithic application project-quiz
+    - Previously, quiz generates questions by accessing database
+    - Now, quiz service communicates to question service for generating quiz.
+    - Implementing methods- create/generate quiz, get Questions based on question id, get score (because right answers are present in question)
+
+Log - 2:
+    - generate quiz method, getting list of question ids from question service - we need to know the category name and number of questions
+    - for get Questions Id, posting questions with id, we have to communicate with database to get the question ids, we are using QuestionWrapper because, we do not want client to know the right answer
+        - we need to get questions from database and convert them into wrapper bacause (no right answers)
+        - creating two lists (list of questions), getting them and adding them to a wrapper and returning it.
+    - For getScore method, we need a calculation - students submitting quiz to quiz service and quiz service sends results to question service -> question service sends the score back to quiz service
+
+Log - 3:
+    - Creating multiple instances of the service, it is done in intellij by editing configurations of the main file.
+    - In the edit configurations, make a copy of the current one and modify the options by adding VM settings (-Dserver.port=8081).
+    - In this way, there will be two instances of the service and both can be run at the same time., one can be stopped but the other one keeps running.
+
+Log - 4:
+    - Creating another microservice -Quiz service, Quiz service interacts with Question-service.
+    - as it is a new microservice, we have to create a new project.
+        - createQuiz -> getQuiz(based on quiz id - there can be multiple quizzes), getScore.
+
+
+(REST OF LOGS IN QUIZ-SERVICE)

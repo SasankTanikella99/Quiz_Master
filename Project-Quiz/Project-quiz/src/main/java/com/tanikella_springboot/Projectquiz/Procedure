@@ -1,0 +1,12 @@
+Log- 1:
+    - generate jar file from spring initializer with web dependencies needed for the project.
+    - unzip the file and open it through IDE.
+    - check everything is set properly in pom file.
+    - in the application.properties, specify the properties that connect to the database (PostgreSQL).
+
+Log- 2:
+    - Create a controller service with required annotations, (RestController, GetMapping, RequestMapping)
+    - architecture ->
+    Client -> Controller_Layer -> Service_Layer -> DAO -> Database.
+    - Client sends a request that is processed in the controller layer. Service layer consists of Business Logic. DAO layer connects to database.
+    - getting data from service layer and returning to client => create a service class
